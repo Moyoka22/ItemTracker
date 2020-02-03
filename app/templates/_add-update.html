@@ -1,0 +1,20 @@
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        <span class="form-label">{{ form.name.label }}</span>
+        {{ form.name(size=32) }}
+    </p>
+    
+    <p>
+        <span class="form-label">{{ form.owner.label }}</span>
+        {{ form.owner(size=32) }}
+    </p>
+
+    <p>
+        <span class="form-label">{{ form.description.label }}</span>
+        {{ form.description(size=512) }}
+    </p>
+
+    <p> {{ form.submit() }}</p>
+
+</form>

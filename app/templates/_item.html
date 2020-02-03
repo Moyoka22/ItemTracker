@@ -1,0 +1,7 @@
+<div class="item-container">
+    <h3>{{ item.name }}</h3>
+    <p> {{ item.owner }} </p>
+    <p> {{ item.descripton }} </p>
+    <a href="{{ url_for('items.update_item', item_id=item.id) }} ">Update</a>
+    <a href="{{ url_for('items.delete_item', item_id=item.id) }} ">Delete</a>
+</div>

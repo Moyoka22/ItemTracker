@@ -9,7 +9,7 @@
 <body>
     <div id="nav">
     {% block nav %} 
-    <a href="{{ url_for('api.index') }}">Home</a>
+    <a href="{{ url_for('items.index') }}">Home</a>
     {% endblock nav %}
     </div>
     <div id="content">
@@ -18,7 +18,7 @@
     </div>
     <div id="footer">
     {% block footer %}
-    <p>by Moyewa Odiase </p>
+    <p>Footer text</p>
     {% endblock footer %}
     </div>
 </body>

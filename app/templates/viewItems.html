@@ -7,4 +7,9 @@
 
 {% block content %}
    <h1>View Items</h1>
+   {% for item in items %}
+        {% include "_item.html" %}
+   {% endfor %}
+   <br>
+    <a href="{{ url_for('items.add_item') }}">Add Item</a>
 {% endblock content %}

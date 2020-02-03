@@ -1,17 +1,28 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
-from app.api import bp as api
-from app.items import bp as items
 from config import Config 
 
-def create_app():
+db = SQLAlchemy()
+migrate = Migrate()
+
+def create_app(config_class=Config):
     app = Flask(__name__)
-    app.register_blueprint(api, url_prefix='/api')
-    app.register_blueprint(items, url_prefix='/items' )
+    app.config.from_object(config_class)
 
     app.config.from_object(Config)
-    db = SQLAlchemy(app)
-    
+    db.init_app(app)
+    migrate.init_app(app,db)
+
+    from app.api import bp as api_bp
+    app.register_blueprint(api_bp, url_prefix='/api')
+
+    from app.items import bp as items_bp
+    app.register_blueprint(items_bp, url_prefix='/items' )
+
+ 
+
     return app
 
+from app import models
