@@ -2,10 +2,15 @@
 {% block title %}Add Item{% endblock title %}
 
 {% block head %}
-    {{ super() }}
+{{ super() }}
 {% endblock head %}
 
 {% block content %}
-    <h1>Add Item</h1>
-    {% include "_add-update.html" %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>Add Item</h1>
+    </div>
+</div>
+
+{% include "_add-update.html" %}
 {% endblock content %}

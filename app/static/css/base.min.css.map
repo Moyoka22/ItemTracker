@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,AAAC,CACD,gBAAgB,CCFH,IAAO,CDEe,AAEvC,AAAA,EAAE,AAAC,CACC,SAAS,CAAE,IAAI,CAAG,AAEtB,AAAA,QAAQ,AAAC,CACL,MAAM,CAAE,MAAM,CACd,KAAK,CAAE,GAAG,CAAG,AAEjB,AAAA,WAAW,AAAC,CACR,SAAS,CAAE,IAAI,CACf,OAAO,CAAE,YAAY,CAAG,AAE5B,AAAA,WAAW,CAAG,KAAK,AAAC,CAChB,OAAO,CAAE,YAAY,CAAG",
+    "sources": [
+        "../scss/base.sass",
+        "../scss/_color.sass"
+    ],
+    "names": [],
+    "file": "base.min.css"
+}
