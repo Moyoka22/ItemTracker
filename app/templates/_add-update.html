@@ -5,13 +5,23 @@
             <span class="form-label">{{ form.name.label }}</span>
         </div>
         <div class="col-md-8">
-            {{ form.name(size=32,value=item.name) }}
+            {% if item %}
+                {{ form.name(size=32,value=item.name) }}
+            {% else %}
+                {{ form.name(size=32) }}
+            {% endif %}
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-4"><span class="form-label">{{ form.owner.label }}</span></div>
-        <div class="col-md-8">{{ form.owner(size=32) }}</div>
+        <div class="col-md-8">
+            {% if item %}
+                {{ form.owner(size=32,value=item.owner) }}
+            {% else %}
+                {{ form.owner(size=32) }}
+            {% endif %}
+        </div>
 
     </div>
     <div class="row">
@@ -19,7 +29,11 @@
             <span class="form-label">{{ form.description.label }}</span>
         </div>
         <div class="col-md-8">
-            {{ form.description(size=512) }}
+            {% if item %}
+                {{ form.description(size=512,value=item.description) }}
+            {% else %}
+                {{ form.description(size=512) }}
+            {% endif %}
         </div>
 
 

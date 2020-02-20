@@ -2,7 +2,17 @@
 
     <h4>{{ item.name }}</h4>
     <p class="lead"> {{ item.owner }} </p>
+    <p> id: {{  item.id }} </p>
     <p> {{ item.description }} </p>
+    
+    {% if not item.is_archived %}
+    
     <a href="{{ url_for('items.update_item', item_id=item.id) }} ">Update</a>
-    <a href="{{ url_for('items.delete_item', item_id=item.id) }} ">Delete</a>
+    <a href="{{ url_for('items.archive_item', item_id=item.id) }} ">Archive</a>
+    {% else %}
+    <p> Archived: {{ item.archived_timestamp.strftime('%H:%M:%S %d/%m/%Y') }} </p>
+    {% endif %}
+    {% if item.has_previous() and item.is_latest() %}
+        <a href="{{ url_for('items.view_history',item_id=item.id) }}">History</a>
+    {% endif %}
 </div>
