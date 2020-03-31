@@ -1,4 +1,5 @@
 from datetime import datetime 
+import json
 
 from app import db 
 
@@ -41,3 +42,12 @@ class Item(db.Model,TimestampMixin):
 
     def __repr__(self):
         return f'<Item {self.id} : {self.name}>'
+
+    def json(self):
+        data = {}
+        data['name'] = self.name
+        data['id'] = self.id
+        data['owner'] = self.owner
+        data['description'] = self.description
+        data['archived'] = self.is_archived
+        return data
